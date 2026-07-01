@@ -2,11 +2,11 @@
 A BlueOS extension for routing a limited selection of MAVLink messages between vehicles
 
 # Usage
-Run this extension on the vehicle that you want to forward messages from. Ensure there is a UDP client endpoint on this vehicle pointing to the "main" UDP server endpoint described in **main.conf**.
+Run this extension on the vehicle that you want to forward messages from. Ensure there is a UDP client endpoint on this vehicle pointing to the "main" UDP server endpoint described in **main.conf**. Also ensure there is a UDP server endpoint on any vehicle you want to receive forwarded messages on.
 
 To modify which messages get sent or received, append to / remove from the **AllowMsgId** in/out fields in **main.conf**. I recommend not allowing "HEARTBEAT" messages (ID 0) to be forwarded or accepted, as these will convince the vehicle they are forwared to that they have magically become the vehicle the message was sent from. This can be sad.
 
-You can also add endpoints and stuff and play around with other options. Running *mavlink-routerd* is literally the only thing this extension does. See the MAVLink router documentation for more details.
+You can also add endpoints and stuff and play around with other options. Running *mavlink-routerd* is literally the only thing this extension does. See the [MAVLink router documentation](https://github.com/mavlink-router/mavlink-router) for more details.
 
 # Building
 1. Clone / fork this repository
